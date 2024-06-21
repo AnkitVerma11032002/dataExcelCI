@@ -29,8 +29,11 @@ const jwtAuthMiddleware  = ( req,res,next)=>{
 
 
 const generateToken = (userdata)=>{
-            return jwt.sign(userdata,key);
+    return jwt.sign(userdata,key);
 };
 
+const verifyToken = (token) => {
+    return jwt.verify(token, key);
+  };
 
-module.exports = {jwtAuthMiddleware,generateToken};
+module.exports = {jwtAuthMiddleware,generateToken,verifyToken};
