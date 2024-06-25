@@ -7,7 +7,7 @@ require('dotenv').config()
 
 const app = express();
 const PORT = 8001;
-
+User.sync({force:true})
 app.use(cors())
 // Middleware to parse JSON bodies
 app.use(express.json());
